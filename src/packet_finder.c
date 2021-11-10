@@ -41,7 +41,7 @@
 
 
 
-const uint8_t kMaxPacketSize = MAX_PACKET_SIZE;          /// max packet size
+const uint8_t kMaxPacketSize = IQ_MAX_PACKET_SIZE;          /// max packet size
 const uint8_t kMaxPacketDataSize = MAX_PACKET_DATA_SIZE; /// max size data
 const uint8_t kStartByte = 0x55;                         /// special start byte
 

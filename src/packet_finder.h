@@ -52,8 +52,8 @@ extern "C" {
 #else
   #define PACKET_BUFFER_SIZE 64                     /// size of input buffer
 #endif
-#define MAX_PACKET_SIZE 64                          /// size packet (including header and CRC)
-#define MAX_PACKET_DATA_SIZE (MAX_PACKET_SIZE-5)    /// size data (not type, etc)
+#define IQ_MAX_PACKET_SIZE 64                          /// size packet (including header and CRC)
+#define MAX_PACKET_DATA_SIZE (IQ_MAX_PACKET_SIZE-5)    /// size data (not type, etc)
 
 extern const uint8_t kStartByte;                    /// special start byte
 
@@ -84,7 +84,7 @@ struct PacketFinder {
   uint16_t data_bytes;              /// bytes of type+data read in current packet
 
   uint8_t buffer[PACKET_BUFFER_SIZE];   /// buffer of recieved packet data
-  uint8_t out_buffer[MAX_PACKET_SIZE];  /// fixed output buffer for contiguous access
+  uint8_t out_buffer[IQ_MAX_PACKET_SIZE];  /// fixed output buffer for contiguous access
   
   struct ByteQueue* packet_indices;
       // maintain queue of indices in buffer at which to find complete packets
